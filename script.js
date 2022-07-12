@@ -147,3 +147,85 @@ code    output
 */
 var myStr = "FirtsLine\n\t\\SecondLine\nThirdLine";
 console.log(myStr);
+
+//Concatenating Strings with Plus Operator
+var ourStr = "I come first. " + "I come second.";
+var myStr = "This is the Start. " + "This is the end.";
+console.log(myStr);
+
+//Concatenating Strings with the Plus Equals Operator
+var ourStr = "I come first. ";
+ourStr += "I come second.";
+
+var myStr = "This is the first sentence. ";
+myStr += "This is the second sentence.";
+console.log(myStr);
+
+//Constructing Strings with Variables
+var ourNames = "freeCodeCamp";
+var ourStr = "Hello, our name is " + ourNames + ", how are you?";
+
+var myName = "Vincent";
+var myStr = "My name is " + myName + " and I am well";
+console.log(myStr);
+
+//Appending Variables to Strings
+var anAdjective = "awesome!";
+var ourStr = "freeCodeCamp is ";
+ourStr += anAdjective;
+
+var someAdjective = "wworthwhile";
+var myStr = "Learning code is ";
+myStr += someAdjective;
+console.log(myStr);
+
+//Find the Length of a String
+var firstNameLength = 0;
+var firstName = "Vincent";
+firstNameLength = firstName.length;
+console.log(firstNameLength);
+
+var lastNameLength = 0;
+var lastName = "Nwafili";
+lastNameLength = lastName.length;
+console.log(lastNameLength);
+
+//Use Bracket Notation to Find the First Character in a String
+var firstLetterOfFirstName = "";
+var firstName = "Vincent";
+firstLetterOfFirstName = firstName[0];
+
+var firstLetterOfLastName = "";
+var lastName = "Nwafili";
+firstLetterOfLastName = lastName[0];
+console.log(firstLetterOfLastName);
+
+//String Immutability
+var myStr = "Jello World";
+myStr = "Hello World";
+
+// Bracket Notation to Find the Nth Character in a String
+var firstName = "Vincent";
+var secondLetterOfFirstName = firstName[1];
+
+var lastName = "Nwafili";
+var thirdLetterOfLastName = lastName[2];
+
+// Bracket Notation to Find the Last Character in a String
+var firstName = "Vincent";
+var lastLetterOfFirstName = firstName[firstName.length - 1];
+
+var lastName = "Nwafili";
+var lastLetterOfLastName = lastName[lastName.length - 1];
+console.log(lastLetterOfLastName);
+
+// Bracket Notation to Find Nth to the Last Character in a String
+var firstName = "Vincent";
+var thirdToLastLetterOfFirstName = firstName[firstName.length - 3];
+console.log(thirdToLastLetterOfFirstName);
+
+var lastName = "Nwafili";
+var secondToLastLetterOfLastName = lastName[lastName.length - 2];
+console.log(secondToLastLetterOfLastName);
+
+//World Blanks
