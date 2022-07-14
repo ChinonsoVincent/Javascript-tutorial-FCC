@@ -388,3 +388,108 @@ function myOutfit() {
 }
 console.log(myOutfit());
 console.log(outerWear);
+
+// Return a value from a Function with Return
+function minusSeven(num) {
+	return num - 7;
+}
+console.log(minusSeven(10));
+
+function timesFive(num) {
+	return num * 5;
+}
+console.log(timesFive(5));
+
+// Understanding undefined value returned from a function
+var sum = 0;
+function addThree() {
+	sum = sum + 3;
+}
+
+function addFive() {
+	sum += 5;
+}
+console.log(addFive()); //undefined
+
+// Assignment with a returned value
+var changed = 0;
+function change(num) {
+	return (num + 5) / 3;
+}
+changed = console.log(change(10));
+
+var processed = 0;
+function processedArg(num) {
+	return (num + 3) / 5;
+}
+processed = processedArg(7);
+
+// Stand In Line
+function nextInLine(arr, item) {
+	arr.push(item);
+	return arr.shift();
+}
+var testArr = [1, 2, 3, 4, 5];
+console.log("Before: " + JSON.stringify(testArr));
+console.log(nextInLine(testArr, 6));
+console.log("After: " + JSON.stringify(testArr));
+
+// Boolean Values
+function welcomeToBolleans() {
+	return true;
+	return false;
+}
+
+// Use conditional Logic with if statements
+function ourTrueOrFalse(isItTrue) {
+	if (isItTrue) {
+		return "Yes, it's true";
+	}
+	return "No, it's false";
+}
+
+function trueOrFalse(wasThatTrue) {
+	if (wasThatTrue) {
+		return "Yes, that was true";
+	}
+	return "No, that was false";
+}
+
+console.log(trueOrFalse(true));
+
+// Comparison with the equality operator
+function testEqual(val) {
+	if (val == 12) {
+		return "Equal";
+	}
+	return "Not Equal";
+}
+console.log(testEqual(10));
+
+// Comparison with Strict Equality Operator
+function testStrict(val) {
+	if (val === 7) {
+		return "Equal";
+	}
+	return "Not Equal";
+}
+console.log(testStrict(10));
+
+// Practise Comparing Different Values
+function compareEquality(a, b) {
+	if (a == b) {
+		return "Equal";
+	}
+	return "Not Equal";
+}
+console.log(compareEquality(10, "10")); // Equal
+
+function compareEquality2(a, b) {
+	if (a === b) {
+		return "Equal";
+	}
+	return "Not Equal";
+}
+console.log(compareEquality2(10, "10")); // Not Equal
+
+// Comparing with the inequality Operator
