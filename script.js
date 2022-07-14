@@ -322,3 +322,69 @@ var myArray = [
 ];
 myArray.shift();
 myArray.unshift("Paul", 35);
+
+//shopping list
+var myList = [
+	["Cereal", 3],
+	["milk", 2],
+	["Bananas", 3],
+	["Juice", 2],
+	["Eggs", 12],
+];
+
+//Write reusuable codes with Function
+function ourReusableFunction() {
+	console.log("Heyya, World");
+}
+ourReusableFunction();
+
+function reusableFunction() {
+	console.log("Hi World");
+}
+reusableFunction();
+
+// Passing Values to Functions with Arguments
+function ourFunctionWithArgs(a, b) {
+	console.log(a - b);
+}
+ourFunctionWithArgs(10, 5);
+
+function FunctionWithArgs(a, b) {
+	console.log(a + b);
+}
+FunctionWithArgs(10, 5);
+
+// Global Scope and Functions
+var myGlobal = 5; // this is global because it is not within any function
+
+function fun1() {
+	var oopsGlobal = 5; //this is a local scope because it is contained in a function
+}
+
+function fun2() {
+	var output = "";
+	if (typeof myGlobal != "undefined") {
+		output += "myGlobal: " + oopsGlobal;
+	}
+	if (typeof oopsGlobal != "undefined") {
+		output += "oopsGlobal: " + oopsGlobal;
+	}
+	console.log(output);
+}
+
+//Local Scope and Function
+function myLocalScope() {
+	var myVar = 5;
+	console.log(myVar);
+}
+myLocalScope();
+console.log(myVar);
+
+//Global vs Local Scope in Function
+var outerWear = "T-Shirt";
+function myOutfit() {
+	var outerWear = "Sweater";
+	return outerWear;
+}
+console.log(myOutfit());
+console.log(outerWear);
