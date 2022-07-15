@@ -435,7 +435,7 @@ console.log(nextInLine(testArr, 6));
 console.log("After: " + JSON.stringify(testArr));
 
 // Boolean Values
-function welcomeToBolleans() {
+function welcomeToBooleans() {
 	return true;
 	return false;
 }
@@ -493,3 +493,147 @@ function compareEquality2(a, b) {
 console.log(compareEquality2(10, "10")); // Not Equal
 
 // Comparing with the inequality Operator
+function testNotEqual(val) {
+	if (val != 99) {
+		return "Not Equal";
+	}
+	return "Equal";
+}
+
+console.log(testNotEqual(10));
+
+// Comparison with Strict Inequality Operator
+function testStrictNotEqual(val) {
+	if (val !== 17) {
+		return "Not Equal";
+	}
+	return "Equal";
+}
+
+console.log(testStrictNotEqual(10));
+
+// Comparison with the Logical and Operator
+function testGreaterThan(val) {
+	if (val > 100) {
+		return "Over 100";
+	}
+	if (val > 10) {
+		return "Over 10";
+	}
+	return "10 or under";
+}
+
+console.log(testGreaterThan(10));
+
+// Comparison with the Greater Than or Equal to Operator
+function testGreaterOrEqual(val) {
+	if (val >= 20) {
+		return "20 or Over";
+	}
+	if (val >= 10) {
+		return "10 or Over";
+	}
+	return "Less than 10";
+}
+
+console.log(testGreaterOrEqual(10));
+
+// Comparison with the Less Than Operator
+function testlessThan(val) {
+	if (val < 25) {
+		return "Under 25";
+	}
+	if (val < 55) {
+		return "under 55";
+	}
+	return "55 or Over";
+}
+console.log(testlessThan(10));
+
+// Comparison with the Less Than or Equal to Operator
+function testLessOrEqual(val) {
+	if (val <= 12) {
+		return "Smaller Than or Equal to 12";
+	}
+	if (val <= 24) {
+		return "Smaller Than or Equal to 24";
+	}
+	return "More Than 24";
+}
+
+console.log(testLessOrEqual(10));
+
+// Comparison with the Logical and Operator
+function testLogicalAnd(val) {
+	if (val <= 50 && val >= 25) {
+		return "Yes";
+	}
+	return "No";
+}
+
+console.log(testLogicalAnd(10));
+
+// Comparison with the Logical or Operator
+function testLogicalOr(val) {
+	if (val < 10 || val > 20) {
+		return "Outside";
+	}
+	return "Inside";
+}
+
+console.log(testLogicalOr(15));
+
+// Else Statements
+function testElse(val) {
+	var result = "";
+	if (val > 5) {
+		result = "Bigger than 5";
+	} else {
+		result = "5 or Smaller";
+	}
+	return result;
+}
+
+console.log(testElse(4));
+
+// Else If Statements
+function testElseIf(val) {
+	if (val > 10) {
+		return "Greater than 10";
+	} else if (val < 5) {
+		return "Smaller than 5";
+	} else {
+		return "Between 5 and 10";
+	}
+}
+
+console.log(testElseIf(7));
+
+//Logical order in If Else Statements
+function orderMyLogic(val) {
+	if (val < 5) {
+		return "Less than 5";
+	} else if (val < 10) {
+		return "Less than 10";
+	} else {
+		return "Greater than or Equal to 10";
+	}
+}
+
+console.log(orderMyLogic(3));
+
+//Chaining If Else Statements
+function testSize(num) {
+	if (num < 5) {
+		return "Tiny";
+	} else if (num < 10) {
+		return "Small";
+	} else if (num < 15) {
+		return "Medium";
+	} else if (num < 20) {
+		return "Large";
+	} else {
+		return "Huge";
+	}
+}
+console.log(testSize(20));
