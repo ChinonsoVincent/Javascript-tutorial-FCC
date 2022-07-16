@@ -5,7 +5,8 @@
  multi-line comment
  */
 
-/* data types and variables
+/* 
+data types and variables
 - strings are texts
 -numbers are numbers
 - undefined is something that hasn't been defined, maybe a variable that hasn't been set to be anything
@@ -133,7 +134,8 @@ var myStr = '<a href="http://www.example.com" target="_blank">Link</a>';
 //another way is to use back ticks, this enable the use of both single and double quotes inside the string, like below
 var myStr = `<a href="http://www.example.com" target='_blank'>Link</a>`;
 
-/*escape sequences
+/*
+escape sequences
 code    output
 \'      single quote
 \"	    double quote
@@ -637,3 +639,236 @@ function testSize(num) {
 	}
 }
 console.log(testSize(20));
+
+// Golf Code
+var names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home!"];
+function golfScore(par, strokes) {
+	if (strokes == 1) {
+		return names[0];
+	} else if (strokes <= par - 2) {
+		return names[1];
+	} else if (strokes == par - 1) {
+		return names[2];
+	} else if (strokes == par) {
+		return names[3];
+	} else if (strokes == par + 1) {
+		return names[4];
+	} else if (strokes == par + 2) {
+		return names[5];
+	} else if (strokes >= par + 3) {
+		return names[6];
+	}
+}
+console.log(golfScore(5, 1));
+
+// Switch Statements
+function caseInSwitch(val) {
+	var answer = "";
+	switch (val) {
+		case 1:
+			answer = "alpha";
+			break;
+		case 2:
+			answer = "beta";
+			break;
+		case 3:
+			answer = "gamma";
+			break;
+		case 4:
+			answer = "delta";
+			break;
+	}
+	return answer;
+}
+
+console.log(caseInSwitch(4));
+
+//Delta Option in Switch Statements
+function switchOfStuff(val) {
+	var answer = "";
+	switch (val) {
+		case "a":
+			answer = "apple";
+			break;
+		case "b":
+			answer = "bird";
+			break;
+		case "c":
+			answer = "cat";
+			break;
+		default:
+			answer = "stuff";
+			break;
+	}
+	return answer;
+}
+
+console.log(switchOfStuff("b"));
+
+// Identifying Identical Options in Switch Statements
+function sequentialSizes(val) {
+	var answer = "";
+	switch (val) {
+		case 1:
+		case 2:
+		case 3:
+			answer = "Low";
+			break;
+		case 4:
+		case 5:
+		case 6:
+			answer = "Mid";
+			break;
+		case 7:
+		case 8:
+		case 9:
+			answer = "High";
+			break;
+	}
+	return answer;
+}
+
+console.log(sequentialSizes(5));
+
+// Replacing the If Else Chains with Switch
+function chainToSwitch(val) {
+	var answer = "";
+	if (val === "bob") {
+		answer = "Marley";
+	} else if (val === 42) {
+		answer = "The answer";
+	} else if (val === 1) {
+		answer = "There is no #1";
+	} else if (val === 99) {
+		answer = "Missed by this much!";
+	} else if (val === 7) {
+		answer = "Ate Nine";
+	}
+	return answer;
+}
+
+console.log(chainToSwitch("bob"));
+
+//switching the above from if else chains to switch
+function chainToSwitch(val) {
+	var answer = "";
+	switch (val) {
+		case "bob":
+			answer = "Marley";
+			break;
+		case 42:
+			answer = "The answer";
+			break;
+		case 1:
+			answer = "There is no #1";
+			break;
+		case 99:
+			answer = "Missed by this much!";
+			break;
+		case 7:
+			answer = "Ate Nine";
+			break;
+	}
+	return answer;
+}
+
+console.log(chainToSwitch("bob"));
+
+// Return a Boolean from a function
+function isLess(a, b) {
+	return a < b;
+}
+
+console.log(isLess(10, 15));
+
+// Returing Early Pattern from Functions
+function abTest(a, b) {
+	if (a < 0 || b < 0) {
+		return undefined;
+	}
+	return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
+}
+
+console.log(abTest(-2, 2));
+
+// Counting cards
+var count = 0;
+
+function cc(card) {
+	switch (card) {
+		case 2:
+		case 3:
+		case 4:
+		case 5:
+		case 6:
+			count++;
+			break;
+		case 10:
+		case "J":
+		case "Q":
+		case "K":
+		case "A":
+			count--;
+			break;
+	}
+	var holdbet = "Hold";
+	if (count > 0) {
+		holdbet = "Bet";
+	}
+	return count + " " + holdbet;
+}
+cc(2);
+cc(3);
+cc(7);
+cc("A");
+cc("A");
+console.log(cc(4));
+
+// Build JavaScript Objects
+var ourDog = {
+	name: "Camper",
+	legs: 4,
+	tails: 1,
+	friends: ["everything"],
+};
+
+var myDog = {
+	name: "Smart",
+	legs: 4,
+	tails: 1,
+	friends: ["None"],
+};
+
+// Accessing Object Properties with Dot Notation
+var testObj = {
+	hat: "ballcap",
+	shirt: "jersey",
+	shoes: "cleats",
+};
+
+var hatValue = testObj.hat;
+var shirtValue = testObj.shirt;
+
+console.log(shirtValue);
+
+// Accessing Object Properties with Bracket Notation, used for objects in which the names have spaces
+var testObj = {
+	"an entree": "hamburger",
+	"my side": "vergies",
+	"the drink": "water",
+};
+
+var entreeValue = testObj["an entree"];
+var drinkValue = testObj["the drink"];
+
+console.log(drinkValue);
+
+//Accessing Object Properties with Variables
+var testObj = {
+	12: "Namath",
+	16: "Montana",
+	19: "Unitas",
+};
+
+var playerName = 16;
+var player = testObj[playerNumber];
