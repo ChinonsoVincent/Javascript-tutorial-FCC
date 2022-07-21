@@ -871,4 +871,146 @@ var testObj = {
 };
 
 var playerName = 16;
-var player = testObj[playerNumber];
+var player = testObj[playerName];
+console.log(player);
+
+// Updating Object Properties
+var ourDog = {
+	name: "Camper",
+	legs: 4,
+	tails: 1,
+	friends: ["everything"],
+};
+
+ourDog.name = "Happy Camper";
+
+var myDog = {
+	name: "Smart",
+	legs: 4,
+	tails: 1,
+	friends: ["freeCodeCamp Campers"],
+};
+
+myDog.name = "Smart Coder";
+
+//Add New Properties to an Object
+var ourDog = {
+	name: "Camper",
+	legs: 4,
+	tails: 1,
+	friends: ["everything"],
+};
+
+ourDog.bark = "bow-wow";
+
+var myDog = {
+	name: "Smart",
+	legs: 4,
+	tails: 1,
+	friends: ["freeCodeCamp Campers"],
+};
+
+myDog["bark"] = "woof";
+
+// Deleting Properties from an Object
+var ourDog = {
+	name: "Camper",
+	legs: 4,
+	tails: 1,
+	friends: ["everything"],
+	bark: "bow-wow",
+};
+console.log(ourDog);
+
+delete ourDog.bark;
+console.log(ourDog);
+
+var myDog = {
+	name: "Smart",
+	legs: 4,
+	tails: 1,
+	friends: ["freeCodeCamp Campers"],
+	bark: "woof",
+};
+
+myDog.tails;
+
+// Using Objects for Lookups
+function phoneticsLookup(val) {
+	var result = "";
+	// Do this instead of the witch below
+	var lookup = {
+		alpha: "Adams",
+		bravo: "Boston",
+		charlie: "Chicago",
+		delta: "Denver",
+		echo: "Easy",
+		foxtrot: "Frank",
+	};
+
+	/* This way longer
+	switch (val) {
+		case "alpha":
+			result = "Adams";
+			break;
+		case "bravo":
+			result = "Boston";
+			break;
+		case "charlie":
+			result = "Chicago";
+			break;
+		case "delta":
+			result = "Denver";
+			break;
+		case "echo":
+			result = "Easy";
+			break;
+		case "foxtrot":
+			result = "Frank";
+			break;
+	}
+	*/
+
+	result = lookup[val];
+
+	return result;
+}
+
+console.log(phoneticsLookup("charlie"));
+
+// Testing Object for Properties
+var myObj = {
+	gift: "pony",
+	pet: "kitten",
+	bed: "sleigh",
+};
+
+function checkObj(checkProp) {
+	if (myObj.hasOwnProperty(checkProp)) {
+		return myObj[checkProp];
+	} else {
+		return "Not Found";
+	}
+}
+
+console.log(checkObj("gift"));
+console.log(checkObj("hello"));
+
+// Manipulating Complex Objects
+var myMusic = [
+	{
+		artist: "Billy Joel",
+		title: "piano Man",
+		release_year: 1973,
+		formats: ["CD", "8T", "LP"],
+		gold: true,
+	},
+	{
+		artist: "Beau Carnes",
+		title: "Cereal Man",
+		release_year: 2003,
+		formats: ["YouTube Video"],
+	},
+];
+
+// Accessing Nested Objects
