@@ -892,6 +892,7 @@ var myDog = {
 };
 
 myDog.name = "Smart Coder";
+console.log(myDog);
 
 //Add New Properties to an Object
 var ourDog = {
@@ -902,6 +903,7 @@ var ourDog = {
 };
 
 ourDog.bark = "bow-wow";
+console.log(ourDog);
 
 var myDog = {
 	name: "Smart",
@@ -911,6 +913,7 @@ var myDog = {
 };
 
 myDog["bark"] = "woof";
+console.log(myDog);
 
 // Deleting Properties from an Object
 var ourDog = {
@@ -1014,3 +1017,140 @@ var myMusic = [
 ];
 
 // Accessing Nested Objects
+var myStorage = {
+	car: {
+		inside: {
+			"glove box": "maps",
+			"passenger seat": "crumbs",
+		},
+		outside: {
+			trunk: "jack",
+		},
+	},
+};
+
+var globeBoxContents = myStorage.car.inside["glove box"];
+
+console.log(globeBoxContents);
+
+// Accessing Nested Arrays
+var myPlants = [
+	{
+		type: "flowers",
+		list: ["rose", "tulip", "dandelion"],
+	},
+	{
+		type: "trees",
+		list: ["fir", "pine", "birch"],
+	},
+];
+
+var secondTree = myPlants[1].list[1];
+console.log(secondTree);
+
+// Record Collection
+var collection = {
+	2548: {
+		albumTitle: "Slippery When Wet",
+		artist: "Bon Jovi",
+		tracks: ["Let It Rock", "You Give Love a Bad Name"],
+	},
+	2468: {
+		albumTitle: "1999",
+		artist: "Prince",
+		tracks: ["1999", "Little Red Corvette"],
+	},
+	1245: {
+		artist: "Robert Palmer",
+		tracks: [],
+	},
+	5439: {
+		albumTitle: "ABBA Gold",
+	},
+};
+
+var collectionCopy = JSON.parse(JSON.stringify(collection));
+
+function updateRecords(id, prop, value) {
+	if (value === "") {
+		delete collection[id][prop];
+	} else if (prop === "tracks") {
+		collection[id][prop] = collection[id][prop] || [];
+		collection[id][prop].push(value);
+	} else {
+		collection[id][prop] = value;
+	}
+	return collection;
+}
+updateRecords(2468, "tracks", "test");
+console.log(updateRecords(5439, "artist", "ABBA"));
+
+// Iterate with Loops
+var myArray = [];
+
+var i = 0;
+while (i < 5) {
+	myArray.push(i);
+	i++;
+}
+
+console.log(myArray);
+
+// Iterate with For Loops
+var ourArray = [];
+
+for (var i = 0; i < 5; i++) {
+	ourArray.push(i);
+}
+
+var myArray = [];
+for (var u = 1; u < 6; u++) {
+	myArray.push(u);
+}
+console.log(myArray);
+
+// Iterate Odd Numbers with a For Loops
+var ourArray = [];
+for (var i = 0; i < 10; i += 2) {
+	ourArray.push(i);
+}
+console.log(ourArray);
+
+var myArray = [];
+for (var i = 1; i < 10; i += 2) {
+	myArray.push(i);
+}
+console.log(myArray);
+
+// Count Backwards with a For Loop
+var ourArray = [];
+for (var i = 10; i > 0; i -= 2) {
+	ourArray.push(i);
+}
+console.log(ourArray);
+
+var myArray = [];
+for (var i = 9; i > 0; i -= 2) {
+	myArray.push(i);
+}
+console.log(myArray);
+
+// Iterate Through an Array with a For Loops
+var ourArr = [9, 10, 11, 12];
+var ourTotal = 0;
+
+for (var i = 0; i < ourArr.length; i++) {
+	ourTotal += ourArr[i];
+}
+console.log(ourTotal);
+
+var myArr = [2, 3, 4, 5, 6];
+var total = 0;
+
+for (var i = 0; i < myArr.length; i++) {
+	total += myArr[i];
+}
+
+console.log(total);
+
+// Nesting a For Loop
