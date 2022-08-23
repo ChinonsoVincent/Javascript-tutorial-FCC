@@ -87,10 +87,11 @@ myVar = myVar + 1;
 myVar++; // same as myVar = myVar + 1;
 console.log(myVar);
 
-//decrementing numbers, substracting 1 to it
+//decrementing numbers, substracting 1 from it
 var myVar = 11;
 myVar--;
 console.log(myVar);
+
 //decimal numbers, also referred to as floating numbers or floats
 var ourDecimal = 5.7;
 var myDecimal = 0.009;
@@ -355,6 +356,36 @@ function FunctionWithArgs(a, b) {
 	console.log(a + b);
 }
 FunctionWithArgs(10, 5);
+
+// Exercise for functions
+// Creating a test drivr car
+function checkDriverAge(age) {
+	if (Number(age) < 18) {
+		return "Sorry, you are too young to drive this car. Powering off";
+	} else if (Number(age) > 85) {
+		return "Sorry, you are too old to drive this car. Powering off";
+	} else if (Number(age) > 18) {
+		return "Powering On. Enjoy the ride!";
+	} else if (Number(age) === 18) {
+		return "Congratulations on your first year of driving. Enjoy the ride!";
+	}
+}
+
+console.log(checkDriverAge(12));
+
+var checkDriverAge2 = function () {
+	var age = prompt("What is your age?");
+
+	if (Number(age) < 18) {
+		alert("Sorry, you are too young to drive this car. Powering off");
+	} else if (Number(age) > 85) {
+		alert("Sorry, you are too old to drive this car. Powering off!");
+	} else if (Number(age) > 18) {
+		alert("Powering On. Enjoy the ride!");
+	} else if (Number(age) === 18) {
+		alert("Congratulations on your first year of driving. Enjoy the ride!");
+	}
+};
 
 // Global Scope and Functions
 var myGlobal = 5; // this is global because it is not within any function
