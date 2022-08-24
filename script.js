@@ -270,7 +270,7 @@ ourArray[1] = 45; // ourArray now equals [18,45,99]
 
 var myArray = [18, 64, 99];
 myArray[0] = 45;
-console.log(myArray);
+console.log(myArray); // myArray now equals [45, 64, 99]
 
 //Access Multi-Dimmensional Arrays with indexes
 var myArray = [
@@ -335,7 +335,28 @@ var myList = [
 	["Eggs", 12],
 ];
 
-//Write reusuable codes with Function
+// Array exercise
+var array = ["Banana", "Apples", "Orange", "Blueberries"];
+// 1. Remove the Banana from the array.
+console.log(array.shift());
+
+// 2. Sort the array in order.
+console.log(array.sort());
+
+// 3. Put "Kiwi" at the end of the array.
+console.log(array.push("kiwi"));
+
+// 4. Remove "Apples" from the array.
+console.log(array.splice(0, 1));
+
+// 5. Sort the array in reverse order.
+console.log(array.reverse());
+
+// Exercise 2
+var array2 = ["Banana", ["Apples", ["Oranges"], "Blueberries"]];
+console.log(array2[1][1][0]);
+
+// Write reusuable codes with Function
 function ourReusableFunction() {
 	console.log("Heyya, World");
 }
@@ -968,6 +989,29 @@ var myDog = {
 };
 
 myDog.tails;
+
+// Exercise
+var database = [
+	{
+		username: "nonso",
+		password: "passwrd",
+	},
+];
+
+var newsfeed = [
+	{
+		username: "Bobby",
+		timeline: "So tired from all that learning!",
+	},
+	{
+		username: "Sally",
+		timeline: "Javascript is sooooo cool!",
+	},
+	{
+		username: "Mitch",
+		timeline: "Javascript is preeetyy cool!",
+	},
+];
 
 // Using Objects for Lookups
 function phoneticsLookup(val) {
