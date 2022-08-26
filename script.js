@@ -998,7 +998,7 @@ var database = [
 	},
 ];
 
-var newsfeed = [
+var newsFeed = [
 	{
 		username: "Bobby",
 		timeline: "So tired from all that learning!",
@@ -1012,6 +1012,19 @@ var newsfeed = [
 		timeline: "Javascript is preeetyy cool!",
 	},
 ];
+
+var usernameprompt = prompt("What is your username?");
+var passwordprompt = prompt("What is your password?");
+
+function signIn(username, password) {
+	if (username === database[0].username && password === database[0].password) {
+		console.log(newsFeed);
+	} else {
+		alert("Sorry, wrong username or Password");
+	}
+}
+
+signIn(usernameprompt, passwordprompt);
 
 // Using Objects for Lookups
 function phoneticsLookup(val) {
