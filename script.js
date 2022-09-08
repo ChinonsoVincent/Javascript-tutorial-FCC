@@ -996,6 +996,18 @@ var database = [
 		username: "nonso",
 		password: "passwrd",
 	},
+	{
+		username: "sally",
+		password: "sal",
+	},
+	{
+		username: "Bobby",
+		password: "bob",
+	},
+	{
+		username: "Mitch",
+		password: "mit",
+	},
 ];
 
 var newsFeed = [
@@ -1016,8 +1028,17 @@ var newsFeed = [
 var usernameprompt = prompt("What is your username?");
 var passwordprompt = prompt("What is your password?");
 
+function isUserValid(username, password) {
+	for (var i = 0; i < database.length; i++) {
+		if (username === database[i].username && password === database[i].password) {
+			return true;
+		}
+	}
+	return false;
+}
+
 function signIn(username, password) {
-	if (username === database[0].username && password === database[0].password) {
+	if (isUserValid(username, password)) {
 		console.log(newsFeed);
 	} else {
 		alert("Sorry, wrong username or Password");
@@ -1242,3 +1263,9 @@ for (var i = 0; i < myArr.length; i++) {
 console.log(total);
 
 // Nesting a For Loop
+
+var counterOne = 0;
+while (counterOne < 10) {
+	console.log(counterOne);
+	counterOne++;
+}
