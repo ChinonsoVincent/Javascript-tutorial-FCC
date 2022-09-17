@@ -1366,3 +1366,46 @@ function convertToIntegerBase(str) {
 }
 
 convertToIntegerBase("10069");
+
+//use the conditional (Ternary) Operator
+//condition ? statement if true : statement if false;
+function checkEqual(a, b) {
+	if (a === b) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+// is the same as
+function checkEqual2(a, b) {
+	return a === b ? true : false;
+}
+
+////use multiple conditional (Ternary) Operator
+function checkSign(num) {
+	return num > 0 ? "positive" : num < 0 ? "negative" : "zero";
+}
+
+checkSign(10);
+
+//It is advisable to use capital letters for all your const declaration
+
+//mutate an array declared with const
+const s = [2, 5, 7];
+function editPlace() {
+	"use strict"; //used to impose strict reguations in your code
+	s[0] = 5;
+	s[1] = 7;
+	s[2] = 2;
+}
+
+//prevent object mutation
+function freezeObj() {
+	"use strict";
+	const MATH_CONSTANTS = {
+		PI: 3.14,
+	};
+}
+
+Object.freeze(MATH_CONSTANTS); //THIS IS USED TO PREVENT THE OBJECT FROM EVER CHANGING, IT WILL ALWAYS REMAIN THE SAME
