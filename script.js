@@ -1264,8 +1264,105 @@ console.log(total);
 
 // Nesting a For Loop
 
-var counterOne = 0;
-while (counterOne < 10) {
-	console.log(counterOne);
-	counterOne++;
+function multiplyAll(arr) {
+	var product = 1;
+
+	for (var i = 0; i < arr.length; i++) {
+		for (var j = 0; j < arr[i].length; j++) {
+			product *= arr[i][j];
+		}
+	}
+	return product;
 }
+
+var product = multiplyAll([
+	[1, 2],
+	[3, 4],
+	[5, 6, 7],
+]);
+console.log(product);
+
+// Iterate with Do... whileLoops
+var myArray = [];
+var i = 10;
+
+do {
+	myArray.push(i);
+	i++;
+} while (i < 5);
+console.log(i, myArray);
+
+//Profile Lookup
+var contacts = [
+	{
+		firstName: "Akira",
+		lastName: "Laine",
+		number: "0543236543",
+		likes: ["Pizza", "Coding", "Brownie Points"],
+	},
+	{
+		firstName: "Harry",
+		lastName: "Potter",
+		number: "0994372684",
+		likes: ["Hogwarts", "Magic", "Hagrid"],
+	},
+	{
+		firstName: "Sherlock",
+		lastName: "Holmes",
+		number: "0487345643",
+		likes: ["Intriguing Cases", "Violin"],
+	},
+	{
+		firstName: "Kristian",
+		lastName: "Vos",
+		number: "unknown",
+		likes: ["JavaScript", "Gaming", "Foxes"],
+	},
+];
+
+function lookUpProfile(name, prop) {
+	for (var i = 0; i < contacts.length; i++) {
+		if (contacts[i].firstName === name) {
+			return contacts[i][prop] || "no such property";
+		}
+		return "no such contact";
+	}
+}
+
+console.log(lookUpProfile("Akira", "likes"));
+
+//Generate Random Fractions
+function randomFraction() {
+	return Math.random();
+}
+
+console.log(randomFraction());
+
+// Generate Random whole Number
+var randonNumBtw0and19 = Math.floor(Math.random() * 20);
+//the ides is that whatever you multiply it with would get you closer to that number but nere that number
+
+function randomWholeNum() {
+	return Math.floor(Math.random() * 10);
+}
+console.log(randomWholeNum());
+
+// Generate Random whole Number within a Range
+function randomRange(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+console.log(randomRange(5, 15));
+
+// use the parseint Function
+function convertToInteger(str) {
+	return parseInt(str);
+}
+convertToInteger("56");
+
+// use the parseint Function with Radix
+function convertToIntegerBase(str) {
+	return parseInt(str, 2);
+}
+
+convertToIntegerBase("10069");
