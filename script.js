@@ -1392,12 +1392,12 @@ checkSign(10);
 //It is advisable to use capital letters for all your const declaration
 
 //mutate an array declared with const
-const s = [2, 5, 7];
+const sss = [2, 5, 7];
 function editPlace() {
 	"use strict"; //used to impose strict reguations in your code
-	s[0] = 5;
-	s[1] = 7;
-	s[2] = 2;
+	sss[0] = 5;
+	sss[1] = 7;
+	sss[2] = 2;
 }
 
 //prevent object mutation
@@ -1409,3 +1409,33 @@ function freezeObj() {
 }
 
 Object.freeze(MATH_CONSTANTS); //THIS IS USED TO PREVENT THE OBJECT FROM EVER CHANGING, IT WILL ALWAYS REMAIN THE SAME
+
+//Use Arrow Functions to Write Concise Anonymous Functions
+var magic = function () {
+	return new Date();
+};
+
+//this is called a nameless function and can also be written like so
+const magic = () => new Date();
+
+//write arrow functions with parameters
+const myConcat = (arr1, arr2) => arr1.concat(arr2);
+
+//write higher order arrow functions
+const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
+
+const squareList = (arr) => {
+	const squaredIntegers = arr.filter((num) => Number.isInteger(num) && num > 0).map((x) => x * x);
+	return squaredIntegers;
+};
+
+const squaredIntegers = squareList(realNumberArray);
+
+//write higher order arrow functions
+const INCREMENT = (function () {
+	return function INCREMENT(number, value = 1) {
+		return number + value;
+	};
+})();
+
+//const INCREMENT = (number, value = 1) => number + value;
