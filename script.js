@@ -1439,3 +1439,61 @@ const INCREMENT = (function () {
 })();
 
 //const INCREMENT = (number, value = 1) => number + value;
+
+//Use the Rest Operator with function parameters
+const SUM = (function () {
+	return function SUM(...args) {
+		return args, reduce((a, b) => a + b, 0);
+	};
+})();
+
+//Use the Spread Operator to Evaluate Arrays In-place
+const arr1s = ["JAN", "FEB", "MAR", "APR", "MAY"];
+let arr2s;
+(function () {
+	arr2s = arr1s;
+	arr1s[0] = "potato";
+})();
+//when this is console logged, the change in arr1s[0] will reflect in the arr2s because technically arr2s is equal to arr1s
+//below is using the spread operator meaning that when the arr1[0] is changed, it doesnt affect the arr2 because arr2 isn't equal too arr1, it just copied it's content
+const arr1 = ["JAN", "FEB", "MAR", "APR", "MAY"];
+let arr2;
+(function () {
+	arr2 = [...arr1];
+	arr1[0] = "potato";
+})();
+
+// use destructive assignment to assign variables from an object
+var voxel = { x: 3.6, y: 7.4, z: 6.54 };
+
+var x = voxel.x; // x = 3.6
+var y = voxel.y; // y = 7.4
+var z = voxel.z; // z = 6.54
+
+// using the destructive assignment, it will be writen as
+const { x: a, y: b, z: c } = voxel; //a = 3.6, b = 7.4, c = 6.54
+
+const AVG_TEMPERATURES = {
+	today: 77.5,
+	tomorrow: 79,
+};
+
+function getTempOfTmrw(avgTemp) {
+	"use strict";
+	const { tomorrow: tempOfTomorrow } = AVG_TEMPERATURES;
+	return tempOfTomorrow;
+}
+
+//destructuring assignment with nested objects
+const LOCAL_FORECAST = {
+	today: { min: 72, max: 83 },
+	tomorrow: { min: 73.3, max: 84.6 },
+};
+
+function getMaxOfTmrw(forecast) {
+	"use strict";
+	const {
+		tomorrow: { max: maxOfTomorrow },
+	} = LOCAL_FORECAST;
+	return maxOfTomorrow;
+}
