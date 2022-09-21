@@ -1406,9 +1406,9 @@ function freezeObj() {
 	const MATH_CONSTANTS = {
 		PI: 3.14,
 	};
-}
 
-Object.freeze(MATH_CONSTANTS); //THIS IS USED TO PREVENT THE OBJECT FROM EVER CHANGING, IT WILL ALWAYS REMAIN THE SAME
+	Object.freeze(MATH_CONSTANTS); //THIS IS USED TO PREVENT THE OBJECT FROM EVER CHANGING, IT WILL ALWAYS REMAIN THE SAME
+}
 
 //Use Arrow Functions to Write Concise Anonymous Functions
 var magic = function () {
@@ -1416,7 +1416,7 @@ var magic = function () {
 };
 
 //this is called a nameless function and can also be written like so
-const magic = () => new Date();
+const MAGIC = () => new Date();
 
 //write arrow functions with parameters
 const myConcat = (arr1, arr2) => arr1.concat(arr2);
@@ -1463,15 +1463,16 @@ let arr2;
 	arr1[0] = "potato";
 })();
 
-// use destructive assignment to assign variables from an object
+// use destructuring assignment to assign variables from an object
 var voxel = { x: 3.6, y: 7.4, z: 6.54 };
 
 var x = voxel.x; // x = 3.6
 var y = voxel.y; // y = 7.4
 var z = voxel.z; // z = 6.54
 
-// using the destructive assignment, it will be writen as
-const { x: a, y: b, z: c } = voxel; //a = 3.6, b = 7.4, c = 6.54
+// using the destructuring assignment, it will be writen as
+const { x: A, y: B, z: C } = voxel;
+//A = 3.6, B = 7.4, C = 6.54
 
 const AVG_TEMPERATURES = {
 	today: 77.5,
@@ -1494,6 +1495,61 @@ function getMaxOfTmrw(forecast) {
 	"use strict";
 	const {
 		tomorrow: { max: maxOfTomorrow },
-	} = LOCAL_FORECAST;
+	} = LOCAL_FOECAST;
 	return maxOfTomorrow;
+}
+console.log(getMaxOfTmrw(LOCAL_FORECAST));
+
+// use destructuring assignment to assign variables from an arrays
+const [x, z, , y] = [1, 2, 3, 4, 5, 6];
+console.log(x, z, y); //this will give you 1, 2, 4
+
+let a = 3;
+let b = 7;
+[a, b] = [b, a];
+
+// use destructuring assignment with rest operator
+const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+function removeFirstTwo(list) {
+	const [, , ...arr] = list;
+	return arr;
+}
+const arr = removeFirstTwo(source);
+
+// use destructuring assignment  to pass an object as a function's parameters
+const stats = {
+	max: 56.78,
+	standard_deviation: 4.34,
+	median: 23.87,
+	mode: 23.87,
+	min: -0.75,
+	average: 35.85,
+};
+const half = (function () {
+	return function half({ max, min }) {
+		return (max + min) / 2.0;
+	};
+})();
+
+//create strings from template literals
+const person = {
+	name: "Zodiac Hashbro",
+	age: 56,
+};
+
+//Template literals with multi-line and string interpolation
+const greeting = `Hello, my name is ${person.name}! 
+I am ${person.age} years old`;
+
+const result = {
+	sucess: ["max-length", "no-amd", "prefer-arrow-functions"],
+	failure: ["no-var", "var-on-top", "linebreak"],
+	skipped: ["id-blacklist", "no-dup-keys"],
+};
+function makeList(arr) {
+	const resulDisplayArray = [];
+	for (let i = 0; i < arr.length; i++) {
+		resulDisplayArray.push(`<li class = "text-warning"> ${arr[li]}`);
+	}
+	return resulDisplayArray;
 }
