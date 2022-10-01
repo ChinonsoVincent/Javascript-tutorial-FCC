@@ -1481,7 +1481,7 @@ const AVG_TEMPERATURES = {
 
 function getTempOfTmrw(avgTemp) {
 	"use strict";
-	const { tomorrow: tempOfTomorrow } = AVG_TEMPERATURES;
+	const { tomorrow: tempOfTomorrow } = avgTemp;
 	return tempOfTomorrow;
 }
 
@@ -1495,7 +1495,7 @@ function getMaxOfTmrw(forecast) {
 	"use strict";
 	const {
 		tomorrow: { max: maxOfTomorrow },
-	} = LOCAL_FOECAST;
+	} = forecast;
 	return maxOfTomorrow;
 }
 console.log(getMaxOfTmrw(LOCAL_FORECAST));
@@ -1547,9 +1547,78 @@ const result = {
 	skipped: ["id-blacklist", "no-dup-keys"],
 };
 function makeList(arr) {
-	const resulDisplayArray = [];
+	const resultDisplayArray = [];
 	for (let i = 0; i < arr.length; i++) {
-		resulDisplayArray.push(`<li class = "text-warning"> ${arr[li]}`);
+		resultDisplayArray.push(`<li class = "text-warning"> ${arr[i]}`);
 	}
-	return resulDisplayArray;
+	return resultDisplayArray;
 }
+console.log(makeList(result.failure));
+
+//Write Concise Object Literal declarartions using Simple fields
+const personDetail = (name, age, gender) => {
+	return {
+		name: name,
+		age: age,
+		gender: gender,
+	};
+};
+
+//can also be written as
+
+const createPerson = (name, age, gender) => ({ name, age, gender });
+console.log(createPerson(`vin`, 45, `male`));
+
+// this is possible when both the key and the value are the same, as they will both give the same result
+
+//Write Concise Declarative Function
+const bicycle = {
+	gear: 2,
+	setGear: function (newGear) {
+		this.gear = newGear;
+	},
+};
+
+bicycle.setGear(3);
+console.log(bicycle.gear);
+//the shorter way to do this is
+
+const cycle = {
+	gear: 2,
+	setGear(newGear) {
+		this.gear = newGear;
+	},
+};
+cycle.setGear(3);
+console.log(cycle.gear);
+
+//Use class syntax to define constructor function
+var spaceShuttle = function (targetPlanet) {
+	this.targetPlanet = targetPlanet;
+};
+
+var zeus = new spaceShuttle("Jupiter");
+
+// same as
+
+class spaceShuttle {
+	constructor(targetPlanet) {
+		this.targetPlanet = targetPlanet;
+	}
+}
+
+var zeus = new spaceShuttle("Jupiter");
+
+function makeClass() {
+	class Vegetable {
+		constructor(name) {
+			this.name = name;
+		}
+	}
+	return Vegetable;
+}
+
+const Vegetable = makeClass();
+const carrot = new Vegetable("carrot");
+
+//use getters and setters to control access to an object
