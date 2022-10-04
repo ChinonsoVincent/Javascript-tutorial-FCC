@@ -1622,3 +1622,69 @@ const Vegetable = makeClass();
 const carrot = new Vegetable("carrot");
 
 //use getters and setters to control access to an object
+class Book {
+	constructor(author) {
+		this._author = author;
+	}
+	//getter
+	get writer() {
+		return this._author;
+	}
+	//setter
+	set writer(updatedAuthor) {
+		this._author = updatedAuthor;
+	}
+}
+
+function makeClass() {
+	class Thermostat {
+		constructor(temp) {
+			this._temp = (5 / 9) * (temp - 32);
+		}
+		//getter
+		get temperature() {
+			return this._temp;
+		}
+		//setter
+		set temperature(updateTemp) {
+			this._temp = updateTemp;
+		}
+	}
+	return Thermostat;
+}
+const Thermostat = makeClass;
+const thermos = new Thermostat(76);
+let temp = thermos.temperature;
+thermos.temperature = 26;
+temp = thermos.temperature;
+
+//Understand the Difference Between import and require
+// to import from another file to your current file
+// the other file has to "export" what you want to import
+//eg in a string_function.js file you want to import capitalizeString variable
+// export const capitalizeString = str => str.toUpperCase()
+
+import { capitalizeString } from "./string_function";
+const cap = capitalizeString("hello");
+
+// Use export to Reuse a code Block
+const CapitalizeString = (string) => {
+	return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
+export { CapitalizeString };
+
+export const foo = "bar";
+export const bar = "foo";
+
+//Use * to import Everything from a file
+import * as CapitalizeStrings from "capitalize_String"; // where CapitalizeStrings is the object name given, it can be any name given by you and capitalize_String" is the file name
+
+//Create an export Fallback with export default
+export default function Substract(x, y) {
+	return x - y;
+}
+
+//import a default export
+import Substract from "math_function"; // where Substract is texport defaault name and math_function is the file name where it is from
+Substract(7, a);
