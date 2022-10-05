@@ -1331,6 +1331,12 @@ function lookUpProfile(name, prop) {
 
 console.log(lookUpProfile("Akira", "likes"));
 
+//for of loop
+let numbers = [10, 20, 30, 40, 50];
+for (let i of numbers) {
+	console.log(i);
+}
+
 //Generate Random Fractions
 function randomFraction() {
 	return Math.random();
