@@ -1688,3 +1688,33 @@ export default function Substract(x, y) {
 //import a default export
 import Substract from "math_function"; // where Substract is texport defaault name and math_function is the file name where it is from
 Substract(7, a);
+
+//String Property
+let course = "JavaScript is cool";
+console.log(course.length); //this shows the full length of the string including spaces
+
+//String Method
+let dtrim = "    JavaScript is cool   ";
+console.log(dtrim.trim()); //this reduces all the white spaces (unnecessary spaces)
+
+let dtoUpperCase = "JavaScript is cool";
+console.log(dtoUpperCase.toUpperCase()); //changes the string to all caps
+
+let dtoLowerCase = "JavaScript is cool";
+console.log(dtoLowerCase.toLowerCase()); //changes the string to all lower cases
+
+let dindexOf = "JavaScript is cool";
+console.log(dindexOf.indexOf("a")); // used to find the index of a character
+console.log(dindexOf.indexOf("o")); //in the situstion where there's more than one of same letter in a string, it always the shows the index of the first letter
+
+let dlastIndexOf = "JavaScript is cool";
+console.log(dlastIndexOf.lastIndexOf("a")); //this shows the index of the last letter
+
+let dslice = "JavaScript is cool";
+console.log(dslice.slice(0, 10)); //used to show the string within an index
+
+let dreplace = "JavaScript is not cool";
+console.log(dreplace.replace("not", "so")); //used to replace the first value with the second value, in this case "not" is replaced by "so"
+
+let dcharAt = "JavaScript is cool";
+console.log(dcharAt.charAt(4)); //returns the character at the index provided
