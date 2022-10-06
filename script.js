@@ -1724,3 +1724,71 @@ console.log(dreplace.replace("not", "so")); //used to replace the first value wi
 
 let dcharAt = "JavaScript is cool";
 console.log(dcharAt.charAt(4)); //returns the character at the index provided
+
+//Array Methods
+const companies = [
+	{ name: "company one", category: "finance", start: 1981, end: 2003 },
+	{ name: "company two", category: "Retail", start: 1992, end: 2008 },
+	{ name: "company Three", category: "Auto", start: 1999, end: 2007 },
+	{ name: "company Four", category: "Retail", start: 1989, end: 2010 },
+	{ name: "company Five", category: "Tech", start: 2009, end: 2014 },
+	{ name: "company Six", category: "finance", start: 1987, end: 2010 },
+	{ name: "company Seven", category: "Auto", start: 1986, end: 1996 },
+	{ name: "company Eight", category: "Tech", start: 2011, end: 2016 },
+	{ name: "company NIne", category: "Retail", start: 1981, end: 1989 },
+];
+
+const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
+
+//for
+for (let i = 0; i < companies.length; i++) {
+	console.log(companies[i]);
+}
+
+//forEach
+// this can takes in 3 values, company is for each company being looped, index is the index of the company and companies is the whole array
+companies.forEach(function (company, index, companies) {
+	console.log(company);
+});
+
+//filter
+// Finding ages above 21 with a for loop
+let canDrink = [];
+for (let i = 0; i < ages.length; i++) {
+	if (ages[i] > +21) {
+		canDrink.push(ages[i]);
+	}
+}
+console.log(canDrink);
+
+// Finding ages above 21 with filter
+const CanDrink = ages.filter(function (age) {
+	if (age >= 21) {
+		return true;
+	}
+});
+console.log(CanDrink);
+
+//you can write it a short one line like this
+const canDrinks = (age) => age >= 21;
+console.log(canDrinks);
+
+//filter retail companies
+const retailComp = companies.filter((retails) => retails.category === "Retail");
+console.log(retailComp);
+
+const retailCompany = companies.filter(function (company) {
+	if (company.category === "Retail") {
+		return true;
+	}
+});
+
+console.log(retailCompany);
+
+//filter companies that started in the 80's
+const eightiesComp = companies.filter(
+	(eighties) => eighties.start >= 1980 && eighties.start < 1990
+);
+
+//filter companies that lasted at least 10 years
+const tenYears = companies.filter((company) => company.end - company.start >= 10);
